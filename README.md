@@ -1,50 +1,34 @@
-# Welcome to your Expo app 👋
+# MyTennisApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+a note taking / organizing app for tennis players and coaches.
 
-## Get started
+## Main features
 
-1. Install dependencies
+Create trainings, matches and player infos, complete tennis challenges
 
-   ```bash
-   npm install
-   ```
+## Privacy Policy
 
-2. Start the app
+1. Data Collection
+This app does not collect, store, or share any personal data. All notes and information entered in the app remain on your device.
 
-   ```bash
-    npx expo start
-   ```
+2. Permissions
+This app may require certain permissions (e.g., storage access) to function properly, but it does not send any data outside your device.
 
-In the output, you'll find options to open the app in a
+3. Third-Party Services
+This app does not use third-party services, analytics, or advertisements that track user behavior.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Getting Started
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+App is on Apple's appstore: MyTennisApp
 
-## Get a fresh project
+### Feature Request, Feedback, Contributing
 
-When you're ready, run:
+ngiakhanh18@gmail.com - Khanh Nguyen
 
-```bash
-npm run reset-project
-```
+## Tech Stack
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- React Native, Expo EAS, AsyncStorage
 
-## Learn more
+## Credit
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Natalie Quach

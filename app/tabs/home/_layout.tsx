@@ -1,5 +1,4 @@
 import { Stack } from "expo-router";
-import "../global.css";
 
 export default function Layout() {
   return (
@@ -9,7 +8,12 @@ export default function Layout() {
         headerShadowVisible: false,
       }}
     >
-      <Stack.Screen name="tabs" />
+      <Stack.Screen
+        name="strategies"
+        options={{
+          presentation: "modal",
+        }}
+      />
     </Stack>
   );
 }

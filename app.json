@@ -7,6 +7,12 @@
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#02102B",
+      "imageWidth": 2000
+    },
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
@@ -22,20 +28,23 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+
+    "experiments": {
+      "typedRoutes": true
+    },
     "plugins": [
-      "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#02102B",
+          "image": "./assets/splash.png",
+          "dark": {
+            "image": "./assets/splash.png",
+            "backgroundColor": "#02102B"
+          },
+          "imageWidth": 200
         }
       ]
-    ],
-    "experiments": {
-      "typedRoutes": true
-    }
+    ]
   }
 }
