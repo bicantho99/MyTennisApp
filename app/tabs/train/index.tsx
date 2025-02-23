@@ -5,6 +5,8 @@ import {
   TouchableOpacity,
   ScrollView,
   TextInput,
+  Button,
+  StyleSheet,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import Checkbox from "expo-checkbox";
@@ -118,3 +120,50 @@ export default function program() {
     </View>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// Define the type for name objects
+
+// Define the type for person objects
+
+// import { useRouter } from "expo-router";
+// import { usePeopleStore } from "@/assets/editStore";
+
+// const EditPersonComponent: React.FC = () => {
+//   const router = useRouter();
+//   const { people, setSelectedPerson } = usePeopleStore();
+
+//   return (
+//     <SafeAreaView className="flex-1 justify-center items-center">
+//       <Text>People List</Text>
+//       <View>
+//         {people.map((person) => (
+//           <View key={person.id}>
+//             <Text>
+//               ID: {person.id} - {person.name}, Age: {person.age}
+//             </Text>
+//             <Button
+//               title="Edit"
+//               onPress={() => {
+//                 setSelectedPerson(person);
+//                 router.push("/tabs/train/EditPage");
+//               }}
+//             />
+//           </View>
+//         ))}
+//       </View>
+//     </SafeAreaView>
+//   );
+// };
+
+// export default EditPersonComponent;

@@ -11,40 +11,29 @@
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#02102B",
-      "imageWidth": 2000
+      "imageWidth": 200
     },
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+      "supportsTablet": true,
+      "bundleIdentifier": "khanhgia19",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
+
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-
     "experiments": {
       "typedRoutes": true
     },
-    "plugins": [
-      [
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#02102B",
-          "image": "./assets/splash.png",
-          "dark": {
-            "image": "./assets/splash.png",
-            "backgroundColor": "#02102B"
-          },
-          "imageWidth": 200
-        }
-      ]
-    ]
+    "extra": {
+      "eas": {
+        "projectId": "e5e90d6b-298f-453f-8007-db100b142d81"
+      }
+    }
   }
 }

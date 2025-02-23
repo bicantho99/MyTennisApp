@@ -19,24 +19,37 @@ export default function Profile() {
   const [mainCheck, setMainCheck] = useState(false);
   const [noteCheck, setNoteCheck] = useState(false);
   const { trainingIDX } = useLocalSearchParams();
+  const [actualTraining, setActualTraining] = useState<any>(null);
   const { loadTrainings, trainingData, deleteTraining } = useTrainingStore();
-  const actualTraining = trainingData.find(
-    (item: any) => item.id == trainingIDX
-  );
-
+  useEffect(() => {
+    const foundTraining = trainingData.find(
+      (item: any) => item.id == trainingIDX
+    );
+    setActualTraining(foundTraining);
+  }, [trainingData, trainingIDX]); 
   return (
     <KeyboardAwareScrollView style={{ flex: 1 }} className="bg-bgColor">
       <SafeAreaView>
         <View className="mx-6 gap-4">
-          <View className="flex-row  justify-between m-4">
+          <View className="flex-row  justify-evenly m-4 items-center">
             <TouchableOpacity onPress={() => router.back()} className="">
               <AntDesign name="arrowleft" size={24} color="white" />
             </TouchableOpacity>
-            <View className=" flex-1 items-center mr-3">
+            <View className=" flex-1 items-center mr-3 ">
               <Text className="text-textColor text-2xl font-bold ">
                 {actualTraining?.title}
               </Text>
             </View>
+            <TouchableOpacity
+              onPress={() =>
+                router.push({
+                  pathname: "/tabs/train/EditPage",
+                  params: { editTraining: actualTraining.id },
+                })
+              }
+            >
+              <Text className="text-slate-300 text-lg font-medium">Edit</Text>
+            </TouchableOpacity>
           </View>
           {actualTraining?.warmUp.length > 0 && (
             <View className="p-3 rounded-xl border border-slate-600">

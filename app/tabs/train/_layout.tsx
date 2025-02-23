@@ -10,9 +10,16 @@ export default function Layout() {
     >
       <Stack.Screen name="index" />
       <Stack.Screen name="examplePage" />
+
       <Stack.Screen name="trainingPage" />
       <Stack.Screen
         name="addtraining"
+        options={{
+          presentation: "modal",
+        }}
+      />
+      <Stack.Screen
+        name="EditPage"
         options={{
           presentation: "modal",
         }}

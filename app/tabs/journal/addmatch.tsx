@@ -146,7 +146,7 @@ export default function Adding() {
 
             <TextInput
               className="bg-gray-800 px-3 pb-10 pt-4 rounded-lg  border border-slate-400 text-white  shadow-sm shadow-slate-700 mt-2"
-              placeholder="Note: Strategies used, etc.."
+              placeholder="Strategies used, How did opponent play? "
               placeholderTextColor={"gray"}
               // multiline
               value={matchNote}

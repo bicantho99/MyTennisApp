@@ -20,7 +20,7 @@ import { useTrainingStore } from "@/assets/trainingsData/data";
 export default function Adding() {
   const { addTraining, trainingData } = useTrainingStore();
   const [trainings, setTraining] = useState<any>([]);
-  const trainingID = uuid.v4();
+  const uniqueID = uuid.v4();
 
   const [selected, setSelected] = useState<number>(0);
   const activeBackgroundColor = "#b5f36b";
@@ -50,7 +50,7 @@ export default function Adding() {
   }
 
   const newProgram = {
-    id: trainingID,
+    id: uniqueID,
     title: title,
     datedate: datedate,
     description: TDef,
