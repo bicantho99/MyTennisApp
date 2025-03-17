@@ -34,25 +34,25 @@ export default function matchpage() {
           <Text className="text-cyan-300 text-center text-2xl font-medium mt-2 flex-1">
             Match Info
           </Text>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             onPress={() =>
               router.push({
-                pathname: "/(editingPages)/matchEdit",
-                params: { editingMatchID: actualMatch.matchId },
+                pathname: "/tabs/journal/editMatch",
+                params: { editingMatchID: actualMatch?.matchId },
               })
             }
           >
-            {/* <Text className="text-slate-400 text-[15px] mt-3 font-medium">
+            <Text className="text-slate-400 text-[15px] mt-3 font-medium">
               Edit
-            </Text> */}
-          {/* </TouchableOpacity> */}
+            </Text>
+          </TouchableOpacity>
         </View>
 
         <View className="mt-8 bg-slate-800 p-2 rounded-lg pl-4 py-5 border-slate-700 border">
           <View className="flex-row justify-between items-center">
             <View className="NAME_SECTION gap-4">
               <Text className="text-textColor text-[20px] font-semibold">
-                {actualMatch.player1}
+                {actualMatch?.player1}
               </Text>
               {/* <TextInput
                 className="text-slate-300  text-[15px] font-semibold w-auto"
@@ -62,33 +62,33 @@ export default function matchpage() {
               /> */}
               <Text className="text-textColor text-[20px] font-semibold">
                 {/* Steve Jobs */}
-                {actualMatch.player2}
+                {actualMatch?.player2}
               </Text>
             </View>
             <View className="SCORE_SECTION gap-5 flex-row pr-2">
               <View className="1 flex-col  gap-2">
                 <Text className="text-slate-900 text-[20px] text-center font-bold p-1 bg-cyan-300 rounded-xl">
-                  {actualMatch.player1_1s}
+                  {actualMatch?.player1_1s}
                 </Text>
                 <Text className="text-slate-900 text-[20px] text-center font-bold p-1 bg-cyan-300 rounded-xl">
-                  {actualMatch.player2_1s}
+                  {actualMatch?.player2_1s}
                 </Text>
               </View>
               <View className="2 flex-col gap-2">
                 <Text className="text-slate-900 text-[20px] text-center font-bold p-1 bg-cyan-300 rounded-xl">
-                  {actualMatch.player1_2s}
+                  {actualMatch?.player1_2s}
                 </Text>
                 <Text className="text-slate-900 text-[20px] text-center font-bold p-1 bg-cyan-300 rounded-xl">
-                  {actualMatch.player2_2s}
+                  {actualMatch?.player2_2s}
                 </Text>
               </View>
-              {!actualMatch.player1_3s && !actualMatch.player2_3s ? null : (
+              {!actualMatch?.player1_3s && !actualMatch?.player2_3s ? null : (
                 <View className="3 flex-col gap-2">
                   <Text className="text-slate-900 text-[20px] text-center font-bold p-1 bg-cyan-300 rounded-xl">
-                    {actualMatch.player1_3s}
+                    {actualMatch?.player1_3s}
                   </Text>
                   <Text className="text-slate-900 text-[20px] text-center font-bold p-1 bg-cyan-300 rounded-xl">
-                    {actualMatch.player2_3s}
+                    {actualMatch?.player2_3s}
                   </Text>
                 </View>
               )}
@@ -107,7 +107,7 @@ export default function matchpage() {
           <Text className="text-blue-300 text-xl pl-3">Match Notes</Text>
           <View className="flex-row gap-3 pl-3 mt-3">
             <Text className="text-slate-400 text-lg">
-              {actualMatch.matchNote}
+              {actualMatch?.matchNote}
             </Text>
           </View>
         </View>
@@ -123,7 +123,7 @@ export default function matchpage() {
               <View className="ml-4">
                 <Rating
                   size={13}
-                  rating={actualMatch.strat}
+                  rating={actualMatch?.strat}
                   disabled
                   scale={1}
                   spacing={11}
@@ -140,7 +140,7 @@ export default function matchpage() {
               <View className="ml-4">
                 <Rating
                   size={13}
-                  rating={actualMatch.techni}
+                  rating={actualMatch?.techni}
                   disabled
                   scale={1}
                   spacing={11}
@@ -157,7 +157,7 @@ export default function matchpage() {
               <View className="ml-4 ">
                 <Rating
                   size={13}
-                  rating={actualMatch.mental}
+                  rating={actualMatch?.mental}
                   disabled
                   scale={1}
                   spacing={11}
@@ -174,7 +174,7 @@ export default function matchpage() {
               <View className="ml-4">
                 <Rating
                   size={13}
-                  rating={actualMatch.physical}
+                  rating={actualMatch?.physical}
                   disabled
                   scale={1}
                   spacing={11}

@@ -8,5 +8,8 @@
       "distribution": "internal"
     },
     "production": {}
+  },
+  "cli": {
+    "appVersionSource": "remote"
   }
 }

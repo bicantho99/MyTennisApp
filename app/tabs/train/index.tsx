@@ -7,7 +7,10 @@ import {
   TextInput,
   Button,
   StyleSheet,
+  Image,
 } from "react-native";
+
+import { AnimatedCircularProgress } from "react-native-circular-progress";
 import React, { useEffect, useState } from "react";
 import Checkbox from "expo-checkbox";
 import { StatusBar } from "expo-status-bar";
@@ -15,11 +18,17 @@ import { router } from "expo-router";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { useTrainingStore } from "@/assets/trainingsData/data";
+import RNSegmentedProgressBar, {
+  RunAnimationHandler,
+} from "@baby-journey/rn-segmented-progress-bar";
 export default function program() {
   const { loadTrainings, trainingData, deleteTraining } = useTrainingStore();
-
+  const circularProgressRef = React.useRef<RunAnimationHandler>(null);
   useEffect(() => {
     loadTrainings();
+    circularProgressRef?.current?.run({
+      progress: 75,
+    });
   }, []);
   return (
     <View className="flex-1 bg-bgColor">
@@ -82,7 +91,7 @@ export default function program() {
                 });
               }}
             >
-              <View className="bg-slate-800 p-4 gap-3 rounded-xl border-blue-300 border-[0.4px] shadow-sm shadow-blue-300">
+              <View className="bg-slate-800 p-4 gap-3 rounded-xl border-blue-300 border-[0.4px]">
                 <View className="flex-row justify-between items-center mb-1">
                   <Text className="text-blue-100 font-medium rounded-lg ">
                     4:00 PM
@@ -114,23 +123,11 @@ export default function program() {
             </TouchableOpacity>
           </View>
 
-          <View className="mt-8 gap-2"></View>
         </View>
       </ScrollView>
     </View>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // Define the type for name objects
 

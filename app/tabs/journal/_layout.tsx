@@ -18,6 +18,18 @@ export default function Layout() {
           presentation: "modal",
         }}
       />
+      <Stack.Screen
+        name="addNotes"
+        options={{
+          presentation: "modal",
+        }}
+      />
+      <Stack.Screen
+        name="editMatch"
+        options={{
+          presentation: "modal",
+        }}
+      />
     </Stack>
   );
 }

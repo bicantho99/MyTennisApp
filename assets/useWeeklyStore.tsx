@@ -11,18 +11,18 @@ export const useWeeklyStore = create<any>((set) => ({
   challenges: [
     {
       id: 1,
-      text: "Slap Forehand Winner",
-      descr: "Aim for opponent's body",
+      text: "Attack Opponent's Weeknesses",
+      descr: "Either their FH, BH or Volley",
     },
     {
       id: 2,
-      text: "Drop Shot Winner",
+      text: "Play Slower with Slice",
       descr: "Drop shot then lob over there head",
     },
     {
       id: 3,
-      text: "Hitting More Tweener",
-      descr: "Hit winner tweener then laugh at them",
+      text: "Spam higher balls",
+      descr: "Get it out of their striking zone",
     },
     {
       id: 4,
@@ -31,8 +31,8 @@ export const useWeeklyStore = create<any>((set) => ({
     },
     {
       id: 5,
-      text: "Improving My Footwork",
-      descr: "Get on your tip-toe",
+      text: "Move them around",
+      descr: "Hit 2 to the BH, 1 to the FH",
     },
     {
       id: 6,

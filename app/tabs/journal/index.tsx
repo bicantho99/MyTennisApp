@@ -15,13 +15,14 @@ import { router } from "expo-router";
 import { useMatchStore } from "@/assets/matchdata/storage";
 import { Ionicons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
+import { useNoteStore } from "@/assets/noteData/data";
 export default function Logs() {
-  const categories = ["Matches", "Techniques"];
+  const categories = ["Matches", "General Notes"];
 
   const [selected, setSelected] = useState(0);
   const [toggle, setToggle] = useState(true);
-  const { matchInfos } = useMatchStore();
-  const { loadMatchInfos } = useMatchStore();
+  const { matchInfos, loadMatchInfos } = useMatchStore();
+  const { noteData } = useNoteStore();
   const handlePress = (index: any) => {
     setSelected(index);
     setToggle((prev) => !prev);
@@ -58,37 +59,62 @@ export default function Logs() {
     const randomTactic = tactics[Math.floor(Math.random() * tactics.length)];
     setTactic(randomTactic);
   }
-  const techniques = [
-    "GroundStrokes",
-    "Serve & Volley",
-    "Foot Work",
-    "Match Play Strategies",
-  ];
+
+  const achieve = ["Won a tournament", "Won challenge matches"];
   const [answer2, setAnswer2] = useState("");
+  const today = new Date();
+  const formattedDate = `${String(today.getMonth() + 1).padStart(
+    2,
+    "0"
+  )}/${String(today.getDate()).padStart(2, "0")}`;
   const switchComponent = () => {
     switch (selected) {
       case 1:
         return (
-          <View className="flex gap-5">
-            {techniques.map((item, index) => {
-              return (
-                <TouchableOpacity key={index}>
-                  <View className="bg-slate-800 p-5 gap-4 rounded-xl border-blue-300 border-[0.4px] shadow-sm shadow-blue-300">
-                    <View className="flex-row justify-between items-center">
-                      <Text className="text-blue-300 font-bold text-[20px]">
-                     {item}
-                      </Text>
-                      <TouchableOpacity>
-                        <AntDesign name="arrowright" size={20} color="white" />
-                      </TouchableOpacity>
+          <View className="p-1">
+            <View className="flex-row flex-wrap justify-between">
+              {noteData.map((item, index) => {
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    className="w-[48%] mb-4"
+                    onPress={() => {
+                      router.push({
+                        pathname: "/tabs/journal/addNotes",
+                        params: { noteID: item.id },
+                      });
+                    }}
+                  >
+                    <View
+                      className={`${item.bgColor} px-4 pt-4 pb-3 rounded-xl border border-gray-200 shadow-md`}
+                    >
+                      <View className="flex-row items-center mb-2">
+                        <Text className=" text-black font-bold text-[17px]">
+                          {item.name}
+                        </Text>
+                      </View>
+                      <View className="gap- mt-1">
+                        <Text key={index} className="text-black text-[13px] tracking-normal leading-6">
+                          • {item.content}
+                        </Text>
+                      </View>
+                      <View className="flex-row justify-between items-center mt-2">
+                        <Text className="text-black font-bold">
+                          {formattedDate}
+                        </Text>
+                        <TouchableOpacity className="mt-2 self-end">
+                          <AntDesign
+                            name="arrowright"
+                            size={20}
+                            color="black"
+                          />
+                        </TouchableOpacity>
+                      </View>
                     </View>
-                    <Text className="text-slate-200 text-md">
-                      Add notes on your {item}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
           </View>
         );
 
@@ -206,15 +232,21 @@ export default function Logs() {
                           )}
                         </View>
                       </View>
-                    </View>
-
-                    <View className="gap-2 mt-1">
-                      <Text className="text-slate-400 text-[14px]">
-                        Match notes:
-                      </Text>
-                      <Text className="text-slate-300 text-[14px]">
-                        {item.matchNote}
-                      </Text>
+                      <View className="gap-2 mt-3">
+                        <View className="flex-row justify-between">
+                          <Text className="text-slate-400 text-[14px]">
+                            Match notes:
+                          </Text>
+                          <Text className="text-slate-400 text-[13px] pr-3">
+                            {item.matchDate}
+                          </Text>
+                        </View>
+                        <Text className="text-slate-300 text-[14px]">
+                          {item.matchNote && item.matchNote.length > 36
+                            ? `${item.matchNote.substring(0, 36)}....`
+                            : item.matchNote}
+                        </Text>
+                      </View>
                     </View>
                   </View>
                 </TouchableOpacity>
@@ -233,7 +265,18 @@ export default function Logs() {
             <Text className="text-white text-[25px] font-semibold mt-4">
               Journal
             </Text>
-            {!toggle ? null : (
+            {!toggle ? (
+              <TouchableOpacity
+                onPress={() => router.push("/tabs/journal/addNotes")}
+              >
+                <AntDesign
+                  name="pluscircle"
+                  size={22}
+                  color="white"
+                  className="mt-6"
+                />
+              </TouchableOpacity>
+            ) : (
               <TouchableOpacity
                 onPress={() => router.push("/tabs/journal/addmatch")}
               >
@@ -274,7 +317,7 @@ export default function Logs() {
               );
             })}
           </View>
-          <View className="mt-9 gap-2">{switchComponent()}</View>
+          <View className="mt-6 gap-2">{switchComponent()}</View>
         </View>
       </ScrollView>
     </View>

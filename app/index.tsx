@@ -18,7 +18,7 @@ import * as Font from "expo-font";
 
 SplashScreen.preventAutoHideAsync();
 SplashScreen.setOptions({
-  duration: 1000,
+  duration: 4000,
   fade: true,
 });
 export default function GuestLayout() {

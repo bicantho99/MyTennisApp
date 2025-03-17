@@ -9,7 +9,25 @@ export default function Layout() {
       }}
     >
       <Stack.Screen
-        name="strategies"
+        name="bigbrain"
+        options={{
+          presentation: "modal",
+        }}
+      />
+      <Stack.Screen
+        name="defend"
+        options={{
+          presentation: "modal",
+        }}
+      />
+      <Stack.Screen
+        name="attack"
+        options={{
+          presentation: "modal",
+        }}
+      />
+      <Stack.Screen
+        name="judges"
         options={{
           presentation: "modal",
         }}

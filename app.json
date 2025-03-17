@@ -2,7 +2,7 @@
   "expo": {
     "name": "MyTennisApp",
     "slug": "MyTennisApp",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -19,9 +19,25 @@
       "bundleIdentifier": "khanhgia19",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
+      },
+      "icon": {
+        "light": "./assets/images/icon.png"
       }
     },
-
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#02102B",
+          "image": "./assets/images/splash.png",
+          "dark": {
+            "image": "./assets/images/splash.png",
+            "backgroundColor": "#02102B"
+          },
+          "imageWidth": 200
+        }
+      ]
+    ],
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -34,6 +50,9 @@
       "eas": {
         "projectId": "e5e90d6b-298f-453f-8007-db100b142d81"
       }
+    },
+    "android": {
+      "package": "com.khanhgia19"
     }
   }
 }
